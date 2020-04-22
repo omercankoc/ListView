@@ -71,9 +71,6 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("language",languages[position])
             intent.putExtra("year",years[position])
 
-            // Guvensiz Erişim
-            // selectedGlobalBitmap = images[position]
-
             // Singleton Yardimi Ile Erisim
             // val singleton = Singleton.Selected
             // singleton.selectedImage = images[position]

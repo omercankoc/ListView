@@ -27,9 +27,6 @@ class DetailsActivity : AppCompatActivity() {
         textViewLanguage.text = language
         textViewYear.text = year
 
-        // Guvensiz Erisim
-        //imageViewLogo.setImageBitmap(selectedGlobalBitmap)
-
         // Singleton Yardimi Ile Erisim
         // val singleton = Singleton.Selected
         // val selectedBitmap = singleton.selectedImage
