@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Datas
+        // Static verilerin olusturulmasi.
         var languages = ArrayList<String>()
         languages.add("Kotlin")
         languages.add("Swift")
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         years.add("2009")
         years.add("2009")
 
-        /*
+        /* Singleton ile Bitmap kullanilarak olusturulan liste.
         val kotlin = BitmapFactory.decodeResource(applicationContext.resources,R.drawable.kotlin)
         val swift = BitmapFactory.decodeResource(applicationContext.resources,R.drawable.swift)
         val go = BitmapFactory.decodeResource(applicationContext.resources,R.drawable.go)
@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         images.add(rust)
         */
 
+        // Image ID'leri kullanilarak olusturulan liste.
         val kotlinId : Int = R.drawable.kotlin
         val swiftId : Int = R.drawable.swift
         val goId : Int = R.drawable.go
@@ -55,27 +56,27 @@ class MainActivity : AppCompatActivity() {
 
 
         // Adapter:  Bir veri kaynagi ile veriye ihtiyaci olan nesneyi birbirine baglayan yapilardir.
-        // (Layout<->Data)
-        // Default Layout : (simple_list_item_1) oldugu gibi Custom adapter da tasarlanabilir.
+        // Default Adapter :
         val adapter : ArrayAdapter<String> = ArrayAdapter(this,android.R.layout.simple_list_item_1,languages)
-        //val adapter : ArrayAdapter<String> = ArrayAdapter(this,R.layout.custom_list,R.id.textViewListLanguage,languages)
+        // Custom Adapter :
+        // val adapter : ArrayAdapter<String> = ArrayAdapter(this,R.layout.custom_list,R.id.textViewListLanguage,languages)
         listView.adapter = adapter
 
-        // List View'daki bir item'e tiklandiginda gerceklesecek operasyon.
+        // List View'daki bir item'e tiklandiginda o veriye ait detaya git.
         listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
 
-            // MainActivity ile DetailsActivity arasinda Intent olusturma operasyonu.
+            // MainActivity ile DetailsActivity arasinda Intent olustur.
             val intent = Intent(applicationContext,DetailsActivity::class.java)
 
-            // Intent ile DetailActivity'ye veri gonderme operasyonu.
+            // Intent ile DetailActivity'ye veri gonder.
             intent.putExtra("language",languages[position])
             intent.putExtra("year",years[position])
 
-            // Singleton Yardimi Ile Erisim
+            // Singleton kullanarak Bitmap verisi gonder.
             // val singleton = Singleton.Selected
             // singleton.selectedImage = images[position]
 
-            // Image ID'si (Int)
+            // Image'i ID degerini gonder.
             intent.putExtra("image",imageIds[position])
 
             startActivity(intent)

@@ -18,21 +18,21 @@ class DetailsActivity : AppCompatActivity() {
         val textViewYear : TextView = findViewById(R.id.textViewYear)
         val imageViewLogo : ImageView = findViewById(R.id.imageViewLogo)
 
-        // Intent ile MainActivity'den gonderilen verileri alma operasyonu.
+        // Intent ile MainActivity'den gonderilen verileri al.
         val intent = intent
         val language : String = intent.getStringExtra("language")
         val year : String = intent.getStringExtra("year")
 
-        // gerekli alanlara verileri aktarma operasyonu.
+        // Gerekli alanlara verileri aktar.
         textViewLanguage.text = language
         textViewYear.text = year
 
-        // Singleton Yardimi Ile Erisim
+        // Singleton kullanarak gonderilen Bitmap verisini al.
         // val singleton = Singleton.Selected
         // val selectedBitmap = singleton.selectedImage
         // imageViewLogo.setImageBitmap(selectedBitmap)
 
-        //
+        // Id's gonderilen image verisini al, cozumle ve goruntule.
         val imageId : Int = intent.getIntExtra("image",0)
         val selectedBitmap = BitmapFactory.decodeResource(applicationContext.resources,imageId)
         imageViewLogo.setImageBitmap(selectedBitmap)
