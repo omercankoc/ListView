@@ -1,6 +1,4 @@
 ## ListView
-```kotlin
-```
 The class that stores the image in bitmap data type with sigleton.
 ```kotlin
 class Singleton {
