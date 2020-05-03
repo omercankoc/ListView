@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Static verilerin olusturulmasi.
+        // Static verileri olustur.
         var languages = ArrayList<String>()
         languages.add("Kotlin")
         languages.add("Swift")
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         years.add("2009")
         years.add("2009")
 
-        /* Singleton ile Bitmap kullanilarak olusturulan liste.
+        /* Singleton ile Bitmap kullanarak liste olustur.
         val kotlin = BitmapFactory.decodeResource(applicationContext.resources,R.drawable.kotlin)
         val swift = BitmapFactory.decodeResource(applicationContext.resources,R.drawable.swift)
         val go = BitmapFactory.decodeResource(applicationContext.resources,R.drawable.go)
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         images.add(rust)
         */
 
-        // Image ID'leri kullanilarak olusturulan liste.
+        // Image ID'leri kullanarak liste olustur.
         val kotlinId : Int = R.drawable.kotlin
         val swiftId : Int = R.drawable.swift
         val goId : Int = R.drawable.go
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             // val singleton = Singleton.Selected
             // singleton.selectedImage = images[position]
 
-            // Image'i ID degerini gonder.
+            // Image'in ID degerini gonder.
             intent.putExtra("image",imageIds[position])
 
             startActivity(intent)
