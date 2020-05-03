@@ -4,8 +4,8 @@ import android.graphics.Bitmap
 
 class Singleton {
 
-    // Singleton : Tek bir Object'e (Instance) sahip sinif.
-
+    // Sinifin tekilligini (Singleton) saglamak ve static nesne ve metotlarin tanimlanmasi icin
+    // companion object blogu kullanilir.
     companion object Selected {
         var selectedImage : Bitmap? = null
     }

@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         // Adapter:  Bir veri kaynagi ile veriye ihtiyaci olan nesnesi birbirine baglayan yapilardir
         // (Layout<->Data)
-        // Default adapter (simple_list_item_1) oldugu gibi Custom adapter da tasarlanabilir.
+        // Default layout (simple_list_item_1) oldugu gibi Custom adapter da tasarlanabilir.
         val adapter : ArrayAdapter<String> = ArrayAdapter(this,android.R.layout.simple_list_item_1,languages)
         //val adapter : ArrayAdapter<String> = ArrayAdapter(this,R.layout.custom_list,R.id.textViewListLanguage,languages)
         listView.adapter = adapter
