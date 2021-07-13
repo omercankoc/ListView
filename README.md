@@ -1,5 +1,5 @@
 ## ListView
-The class that stores the image in bitmap data type with sigleton.
+### The class that stores the image in bitmap data type with sigleton.
 ```kotlin
 class Singleton {
     companion object Selected {
@@ -7,7 +7,8 @@ class Singleton {
     }
 }
 ```
-Create static datas:
+
+### Create static datas:
 ```kotlin
 var languages = ArrayList<String>()
 languages.add("Kotlin")
@@ -25,7 +26,8 @@ var images = ArrayList<Bitmap>()
 var kotlin = BitmapFactorydecodeResource(applicationContext.resources,R.drawable.kotlin)
 images.add(kotlin)
 ```
-Adapter : These are the structures that connect an object that needs data with a data source.
+
+### Adapter : These are the structures that connect an object that needs data with a data source.
 ```kotlin
 // Default Layout (Alternative):
 val adapter : ArrayAdapter<String> = ArrayAdapter(this,android.R.layout.simple_list_item_1,languages)
@@ -33,7 +35,8 @@ val adapter : ArrayAdapter<String> = ArrayAdapter(this,android.R.layout.simple_l
 val adapter : ArrayAdapter<String> = ArrayAdapter(this,R.layout.custom_list,R.id.textViewListLanguage,languages)
 listView.adapter = adapter
 ```
-Action to take when clicking an item in ListView:
+
+### Action to take when clicking an item in ListView:
 ```kotlin
 listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
 
@@ -54,7 +57,8 @@ listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, p
     startActivity(intent)
 }
 ```
-Get the sent data from other activity:
+
+### Get the sent data from other activity:
 ```kotlin
 // Definition and Initialize
 val textViewLanguage : TextView = findViewById(R.id.textViewLanguage)
